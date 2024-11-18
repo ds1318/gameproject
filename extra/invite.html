@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>New Project</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' href='css/style.css'>
+  </head>
+  <body>
+    <div class="mainpage550">
+
+      <header class="page-head">
+        <div class="row">
+          <div class="col-12">
+            <div class="back-btn" onclick="history.back(-1)">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </div>
+            <h5 class="text-center">Invite friends</h5>
+          </div>
+        </div>
+      </header>
+
+      <div class="inner-page">
+        <section>
+          <div class="page-banner">
+            <div class="row text-center">
+              <div class="col-12 mb-2">
+                <p> ITC referral rewards</p>
+              </div>
+              <div class="col-12 mb-2">
+                <p>&nbsp;Level 1 = 15%</p>
+              </div>
+              <div class="col-12 mb-2">
+                <p>Level 2 = 3%</p>
+              </div>
+              <div class="col-12 mb-2">
+                <p>Level 3 = 1%</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="warn">
+            <div class="row">
+              <div class="col-12">
+                <p>&lt; आपको अपने लिंक को अधिक दोस्तों के साथ शीघ्रता से साझा
+                  करने, इसे वायरल रूप से फैलाने, एक बड़ी टीम बनाने, प्रति दिन 0
+                  निवेश करने और अधिक रेफरल पुरस्कार अर्जित करने के लिए केवल एक
+                  स्मार्टफोन की आवश्यकता है। &gt;</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="referral">
+            <div class="row mb-2">
+              <div class="col-9  p-0 pl-3">
+                <div class="ref">
+                  <h6 class="mb-0">Refferal Link<h6>
+                      <p id="referralLink"
+                        class="ref-link">https://www.itvnd91c-mith303.com/index/user123</p>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <button class="copy-button"
+                      onclick="copyReferralLink()">COPY</button>
+                  </div>
+                </div>
+                <div id="notification" class="notification">Copied</div>
+                <div class="row ">
+                  <div class="col-9 p-0 pl-3">
+                    <div class="ref">
+                      <h6 class="mb-0">Reffer Id</h6>
+                      <p id="referrerID" class="ref-link">ikuzc</p>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <button class="copy-id-button"
+                      onclick="copyReferrerID()">COPY</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row text-center">
+                <div class="col-12">
+                  <div class="scanner">
+                    <img src="img/scanner.png" alt>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+          </div>
+
+          <script>
+            function copyTextToClipboard(text) {
+  const tempInput = document.createElement('input');
+  tempInput.value = text;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand('copy');
+  document.body.removeChild(tempInput);
+  showNotification();
+}
+
+function copyReferralLink() {
+  const referralLink = document.getElementById('referralLink').textContent;
+  copyTextToClipboard(referralLink);
+}
+
+function copyReferrerID() {
+  const referrerID = document.getElementById('referrerID').textContent;
+  copyTextToClipboard(referrerID);
+}
+
+function showNotification() {
+  const notification = document.getElementById('notification');
+  notification.style.display = 'block';
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
+}
+
+          </script>
+
+          <script src="js/jquery.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+        </body>
+      </html>

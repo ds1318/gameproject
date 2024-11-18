@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>New Project</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel="stylesheet"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' href='css/style-register.css'>
+    <style>
+      .privacy {
+        text-decoration: none;
+        position: relative;
+        color: #000; 
+    }
+    
+     .privacy::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px; 
+        bottom: -2px; 
+        left: 0;
+        background-color: #000; 
+        transition: width 0.3s ease-in-out;
+    }
+    
+     .privacy:hover::after {
+        width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="mainpage550">
+
+      <header class="page-head">
+        <div class="row">
+          <div class="col-12">
+            <h5 class="text-center mt-1">Register</h5>
+          </div>
+        </div>
+      </header>
+
+      <div class="inner-page">
+        <section class="login-bg">
+          <div class="row my-auto">
+            <div class="col-12">
+              <div class="logo-reg text-center">
+                <a href="index.html">
+                  <img src="img/logo.png" class="w-100">
+                </a>
+              </div>
+            </div>
+            <div class="col-12">
+              <form class="inner-page-form login-form">
+                <div class="form-group">
+                  <div class="input-group mb-2">
+                    <input type="tel" class="form-control" id="Inputnumber"
+                      placeholder="Phone number">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control"
+                      id="Inputpassword" placeholder="login password">
+                    <i class="toggle-password fa fa"> <img
+                        src="img/login/eye-slash.png" width="25"></i>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control"
+                      id="Inputconfirmpassword"
+                      placeholder="confirm  login password">
+                    <i class="toggle-password fa fa"> <img
+                        src="img/login/eye-slash.png" width="25"></i>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control"
+                      id="Inputconfirmpassword"
+                      placeholder="withdrawal password">
+                    <i class="toggle-password fa fa"> <img
+                        src="img/login/eye-slash.png" width="25"></i>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="Inputcode"
+                      placeholder="invitation code">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input"
+                      id="termsConditions" style="margin-top: -12px;">
+                    <label class="form-check-label" for="termsConditions">
+                      I agree to the <a href="terms.html" class="terms">Terms &
+                        Conditions</a>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group mt-4">
+                  <div class="row">
+                    <div class="col-12 pr-0"> <button type="submit"
+                        class="btn btn-bg w-100">Register</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group mt-2">
+                  <div class="row text-center">
+                    <div class="col-12 pr-0">
+                      <a class="log" href="login.html">Already Have an Account,
+                        Go to Login</a>
+                    </div>
+                  </div>
+                </div>
+
+
+                
+                <div class="form-group text-center">
+                  <div class="row">
+                    <div class="col-12 p-0 mt-4">
+                      <div class="reg">
+                        <a href="privacy.html" class="privacy">Privacy
+                          Policy</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+
+      <script>
+  $(document).ready(function() {
+      $(".toggle-password").click(function() {
+          var input = $(this).siblings("input");
+          var img = $(this).find("img");
+
+          if (input.attr("type") == "password") {
+                input.attr("type", "text");
+                img.attr("src", "img/login/eye.png");
+            } else {
+                input.attr("type", "password");
+                img.attr("src", "img/login/eye-slash.png");
+            }
+      });
+  });
+</script>
+
+    </body>
+  </html>

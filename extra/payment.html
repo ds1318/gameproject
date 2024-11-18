@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>New Project</title>
+        <link rel="icon" href="img/favicon.png">
+        <link rel='stylesheet' href='css/bootstrap.min.css'>
+        <link rel="stylesheet"
+            href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <link rel='stylesheet' href='css/style.css'>
+    </head>
+    <body>
+        <div class="mainpage550">
+            <div class="inner-page">
+
+                <header class="payment-head mb-2">
+                    <div class="row my-auto">
+                        <div class="col-6 ">
+                            <span class="time" id="time">07:00</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <div class="language-dropdown">
+                                <div class="selected-language">
+                                    <img src="img/flag.png" alt="English">
+                                    <span>English</span>
+                                    <i class="arrow-down"></i>
+                                </div>
+                                <div class="language-options">
+                                    <div class="language-option">
+                                        <img src="img/flag.png" alt="English">
+                                        <span>English</span>
+                                    </div>
+                                    <div class="language-option">
+                                        <img src="img/flag.png" alt="English">
+                                        <span>Français</span>
+                                    </div>
+                                    <div class="language-option">
+                                        <img src="img/flag.png" alt="English">
+                                        <span>Español</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <section>
+                    <form>
+
+                        <div class="payment-head ">
+                            <div class="row text-center">
+                                <div class="col-12 text-center mt-2">
+                                    <h6>UPI ID:</h6>
+                                    <input type="text" class="form-control"
+                                        id="upi-id" value="awdhesh12@airtel">
+                                    <button class="submit-btn"
+                                    onclick="copyReferralLink()">copy</button>
+                                </div>
+
+                                <div class="col-12 text-center">
+                                    <p style="margin-top: 15px;font-size: 14px;color:#ff0000;">केवल एकल लेनदेन के लिए</p>
+                                    <img src="img/scanner.png" alt="QR Code"
+                                        class="qr-code">
+                                </div>
+
+                                <div class="col-12 p-0  text-center">
+                                    <p class="amount">333.00</p>
+                                    <p
+                                        class="platform">paytm,phonepe,googlepay,BHIM
+                                        and more</p>
+                                </div>
+
+                                <div
+                                    class="payment-methods  pl-3 pr-3 text-center">
+                                    <img src="img/Paytm_logo.png">
+                                    <img src="img/phone-pe-logo.png"
+                                        alt="PhonePe">
+                                    <img src="img/google-pay-logo.png"
+                                        alt="Google Pay">
+                                    <img src="img/bhim.png" alt="BHIM">
+                                </div>
+
+                                <div class="row mt-3 text-center">
+                                    <div class="col-2 mt-1">
+                                        <label><span
+                                                class="text-danger">*</span>UTR:</label>
+                                    </div>
+                                    <div class="col-10">
+                                        <input type="number"
+                                            class="form-control"
+                                            placeholder="UTR(UPI Ref.ID) 12 अंक">
+                                        <button
+                                            class="submit-btn">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </section>
+
+                    <section>
+                        <div class="payment-head">
+                            <div class="row text-left">
+                                <div class="col-12">
+                                    <div class="instructions">
+                                        <p class="mb-2">अनुस्मारक</p>
+                                        <ol>
+                                            <li class="mb-3">QR कोड या UPI
+                                                भुगतान स्कैन करना और ऑर्डर राशि
+                                                भुगतान संशोधित करना सभी अवैध
+                                                संचालन हैं! भुगतान सहेजें
+                                                नहीं!</li>
+                                            <li class="mb-3">कृपया निर्देश समय
+                                                के भीतर ऊपर कॉपी किए गए UPI पर
+                                                भुगतान करें, अन्यथा ऑर्डर सफल
+                                                नहीं हो सकता है और आपको स्वयं
+                                                नुकसान उठाना पड़ेगा।</li>
+                                            <li class="mb-3">निम्नलिखित भुगतान
+                                                विकल्प से भुगतान करने के बाद:
+                                                PayTM, PhonePE, GooglePay, BHIM,
+                                                आदि।</li>
+                                            <li class="mb-3">प्रत्येक ट्रैकिंग
+                                                ऑर्डर को UPI प्रमाणपत्र प्रदान
+                                                किया जाता है।</li>
+                                            <li class="mb-3">महत्वपूर्ण
+                                                अनुस्मारक: UPI लेनदेन पूरा करने
+                                                के बाद, कृपया संदर्भ संख्या/UTR
+                                                संख्या/Google Pay: UPI लेनदेन
+                                                ID/Freecharge: लेनदेन ID (12
+                                                अंक) भरें। यदि आप UTR को वापस
+                                                नहीं भरते हैं, तो 100% जमा
+                                                लेनदेन विफल हो जाएगा। कृपया
+                                                बेक़ीफ़ल करना सुनिश्चित
+                                                करें!</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <script src="js/jquery.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+
+
+                <script>
+                    function copyReferralLink() {
+                        var upiId = document.getElementById('upi-id');
+                        upiId.select();
+                        upiId.setSelectionRange(0, 99999); // For mobile devices
+                
+                        navigator.clipboard.writeText(upiId.value).then(function() {
+                            alert('UPI ID copied to clipboard!');
+                        }).catch(function(err) {
+                            console.error('Failed to copy text: ', err);
+                        });
+                    }
+                </script>
+                
+                
+
+
+
+
+
+
+                <!-- ......................................language start........................... -->
+                <script>
+                document.addEventListener("DOMContentLoaded", function() {
+    const selectedLanguage = document.querySelector(".selected-language");
+    const languageOptions = document.querySelector(".language-options");
+
+    selectedLanguage.addEventListener("click", function() {
+        languageOptions.style.display = languageOptions.style.display === "none" || languageOptions.style.display === "" ? "block" : "none";
+    });
+
+    document.addEventListener("click", function(event) {
+        if (!selectedLanguage.contains(event.target)) {
+            languageOptions.style.display = "none";
+        }
+    });
+
+    const options = document.querySelectorAll(".language-option");
+    options.forEach(option => {
+        option.addEventListener("click", function() {
+            const imgSrc = option.querySelector("img").src;
+            const text = option.querySelector("span").textContent;
+            selectedLanguage.querySelector("img").src = imgSrc;
+            selectedLanguage.querySelector("span").textContent = text;
+            languageOptions.style.display = "none";
+        });
+    });
+});
+
+            </script>
+                <!-- .....................language js.......................... -->
+
+                <!-- ..................time js................................ -->
+                <script>
+    let countdownMinutes = 7;
+    let countdownSeconds = 0;
+
+    function updateCountdown() {
+        const timeElement = document.getElementById('time');
+        let minutes = countdownMinutes < 10 ? '0' + countdownMinutes : countdownMinutes;
+        let seconds = countdownSeconds < 10 ? '0' + countdownSeconds : countdownSeconds;
+        timeElement.textContent = minutes + ':' + seconds;
+    }
+
+    function countdown() {
+        if (countdownMinutes === 0 && countdownSeconds === 0) {
+            clearInterval(countdownInterval);
+            clearInterval(secondsInterval);
+            return;
+        }
+        if (countdownSeconds === 0) {
+            countdownMinutes--;
+            countdownSeconds = 59;
+        } else {
+            countdownSeconds--;
+        }
+        updateCountdown();
+    }
+
+    // Update the countdown immediately
+    updateCountdown();
+    
+    // Set intervals for countdown
+    const countdownInterval = setInterval(countdown, 1000);
+    const secondsInterval = setInterval(updateCountdown, 1000);
+</script>
+
+            </body>
+        </html>

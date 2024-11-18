@@ -1,0 +1,185 @@
+body{
+    background-color: #fff;
+}
+button:focus{
+    border: none;
+    outline:unset;
+}
+.row{
+    margin: 0;
+}
+.logo img{
+    max-width: 150px;
+}
+.logo{
+    padding:70px 0px 170px 0px; 
+    height: 130px;
+}
+.mainpage550{
+    max-width: 550px;
+    width: 100%;
+    margin: auto;
+    overflow: auto;
+    background-color: #fff;
+}
+.inner-page{   
+        padding: 15px 30px;
+}
+.login-bg h6{
+    font-weight: 400;
+    padding-bottom:15px;
+    font-size: 18px;
+}
+
+
+.btn-card{
+    background-color: #E22B03;
+    color:#ffefca;
+    border-radius: 50px;
+    text-align: center;
+}
+.btn-card p{
+    margin: 0;
+    padding: 5px;
+
+}
+.btn-card a{
+    color: #FEB300;
+    text-decoration: underline;
+}
+.btn-card a:hover{
+    color: #FEB300;
+}
+/*.header{
+    height: 230px;
+}*/
+
+.inr-text{
+    position: absolute;
+        padding: 13px;
+}
+.back-btn{
+    color: #ababab;
+    font-size: 12px;
+}
+.back-btn a{
+    color: #ababab;
+    font-size: 12px;
+}
+
+.login-form input{
+    color: #000;
+    border-radius: 5px 5px 5px 5px !important;
+    height: 40px;
+    padding: 0px 45px;
+    border: 0;
+    font-size: 16px;
+    background-color: #F1F1F1;
+}
+.login-form input:focus{
+    box-shadow: none;
+    background-color: #F1F1F1;
+}
+.login-form input::placeholder{
+    color: rgb(114, 114, 114) !important; 
+}
+.login-form label{
+       font-size: 18px;
+    color: #bbbbbb;
+    position: relative;
+    top: -3px;
+}
+
+.input-group-text{
+    background-color: unset;
+    border: 0;
+    border-bottom: 1px solid #333;
+    border-radius: 0;
+}
+
+
+.btn-bg{
+   background-color:#063062;
+    border:0;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 25px;
+}
+.btn-bg:hover{
+    color: #fff;
+ 
+}
+.toggle-password{
+    position: absolute;
+    right: 12px;
+    color: #ccc;
+    margin-top: 18px;
+    z-index: 9;
+}
+.d-none-img img{
+    display: none;
+}
+.download-btn{
+    font-size: 12px;
+}
+.btn-bg-border{
+    background-color: unset;
+    border: 1px solid #005985;
+    font-size: 14px;
+    color: #005985;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-family: serif;
+}
+.btn-bg-border:hover{
+     color: #2f7bff;  
+}
+.icon-inner{
+    background-color:#2f7aff ;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+}
+.icon-inner i{
+    padding: 10px 8px;
+}
+
+.page-head{
+   background-color: #063062;
+   color: #fff;
+   padding: 10px 0;
+}
+
+
+/* ................ */
+.login-phone{
+    position: absolute;
+    top: 9px;
+    left: 7px;
+    width: 35px;
+    z-index: 9999;
+    border-right: 1px solid #cccccc7d;
+    padding: 4px 8px 0px 6px;
+    
+}
+
+
+.login-pwd{
+    position: absolute;
+    top: 9px;
+    left: 7px;
+    width: 35px;
+    z-index: 9999;
+    border-right: 1px solid#cccccc7d;
+    padding: 4px 8px 0px 6px;
+
+}
+
+.reg a{
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}

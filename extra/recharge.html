@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>New Project</title>
+	<link rel="icon" href="img/favicon.png">
+	<link rel='stylesheet' href='css/bootstrap.min.css'>
+	<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+	<link rel='stylesheet' href='css/style.css'>	
+
+  <style type="text/css">
+    .main-form {
+    padding: 15px;
+    }
+
+    .main-form input{
+    border-radius: 0;
+    background-color: unset;
+    color: #666 !important;
+    padding: 5px 5px 5px 16px !important;
+    border-bottom: 1px solid #d6d6d65e;
+    font-size: 17px;
+    }
+
+    .main-form input:focus{
+      padding: 5px 5px 5px 16px !important;
+      font-size: 17px;
+      border-bottom: 1px solid #d6d6d65e;
+      border-radius: 0;
+    }
+
+
+    .main-form input::placeholder{
+    color: #666 !important;
+    font-size:19px;
+
+    }
+  </style>
+</head>
+
+<body>
+<div class="mainpage550">
+
+  <header class="page-head">
+    <div class="row">
+      <div class="col-12">
+        <div class="back-btn" onclick="history.back(-1)">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </div>
+        <h5 class="text-center">Recharge</h5>
+      </div>
+    </div>
+  </header>
+
+		<section>        
+          <div class="row no-gutters">
+            <div class="col-12">
+              <form class="main-form">                
+                <div class="card card-app ">
+
+                  <div class="form-group mb-0">          
+                    <label>Enter  amount:</label>    
+                                                     
+                    <input type="number" name="" id="getvalue" placeholder="Please enter the  number" class="form-control shadow-none">
+                    <span style="color:#ff0000;position: absolute;top:47px;left: 17px;font-size: 14px;">&#8377;</span>                
+                </div> 
+                  
+
+
+                  <div class="form-group">
+                    <div class="inner-page-recharge-btn">               
+                      <div class="row no-gutters">
+                        <div class="col-4 rc_amount p-1" onclick="changevalue(333)">               
+                          <div class="rec-amount">
+                           333
+                          </div>              
+                        </div>
+
+                        <div class="col-4 rc_amount p-1" onclick="changevalue(2733)">               
+                          <div class="rec-amount">
+                           2733
+                          </div>              
+                        </div>
+
+                        <div class="col-4 rc_amount p-1" onclick="changevalue(7733)">               
+                          <div class="rec-amount">
+                           7733
+                          </div>              
+                        </div>
+
+                        <div class="col-4 rc_amount p-1" onclick="changevalue(17733)">               
+                          <div class="rec-amount">
+                           17733
+                          </div>                
+                        </div>
+                        <div class="col-4 rc_amount p-1" onclick="changevalue(37733)">              
+                          <div class="rec-amount">
+                           37733
+                          </div>              
+                        </div>
+                        <div class="col-4 rc_amount p-1" onclick="changevalue(57733)">              
+                          <div class="rec-amount">
+                           57733
+                          </div>              
+                        </div>
+                        <div class="col-4 rc_amount p-1" onclick="changevalue(1222)">                
+                          <div class="rec-amount">
+                           1222
+                          </div>                
+                        </div>
+                        <div class="col-4 rc_amount p-1" onclick="changevalue(2222)">               
+                          <div class="rec-amount">
+                           2222
+                          </div>              
+                        </div>
+                        
+                        <div class="col-4 rc_amount p-1" onclick="changevalue(3222)">               
+                          <div class="rec-amount">
+                           3222
+                          </div>              
+                        </div>
+
+                        <div class="col-12">
+                          <p>* Confirm the recharge amount and fill in the UTR number correctly.</p>
+                          <p>* Every time you recharge, you need to re-acquire the receiving account at the cashier.</p>
+                          <p>* For recharge questions, please contact online customer service.</p>
+                        </div>
+
+                      </div>          
+                    </div>  
+                  
+                  </div>                  
+                </div>               
+                
+                <div class="form-group mt-3 pr-3 pl-3">
+                <a href="recharge-next.html" type="submit" class="btn btn-rch w-100">Confirm recharge</a>
+              </div>
+                
+            </div>
+              
+              </form> 
+
+              
+            </div>
+            </div>
+            
+          </div>       
+      </section>
+
+</div>
+
+
+
+
+	
+<script src="js/jquery.min.js"></script>	
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    // Author: Joseph Cowdell
+
+copyText = function(textToCopy) {
+  this.copied = false
+  
+  // Create textarea element
+  const textarea = document.createElement('textarea')
+  
+  // Set the value of the text
+  textarea.value = textToCopy
+  
+  // Make sure we cant change the text of the textarea
+  textarea.setAttribute('readonly', '');
+  
+  // Hide the textarea off the screnn
+  textarea.style.position = 'absolute';
+  textarea.style.left = '-9999px';
+  
+  // Add the textarea to the page
+  document.body.appendChild(textarea);
+
+  // Copy the textarea
+  textarea.select()
+
+  try {
+    var successful = document.execCommand('copy');
+    this.copied = true
+  } catch(err) {
+    this.copied = false
+  }
+
+  textarea.remove()
+}
+
+copyById = function(id) {
+  let text = document.getElementById(id)
+  copyText(text.value)  
+}
+
+
+</script>
+
+ <script type="text/javascript">
+var selector = '.rc_amount .rec-amount';
+
+$(selector).on('click', function(){
+    $(selector).removeClass('activecolor');
+    $(this).addClass('activecolor');
+});
+
+
+function changevalue(value){
+
+document.getElementById('getvalue').value = value;
+document.getElementById('getvalue2').textContent = value;
+  
+}
+</script>
+
+</body>
+</html>

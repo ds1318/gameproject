@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>New project</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel="stylesheet"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' href='css/owl.carousel.min.css'>
+    <link rel='stylesheet' href='css/style.css'>
+
+    <style>
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+}
+
+.mainpage550 {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  position: relative;
+}
+
+.inner-page {
+  width: 95%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px green;
+  margin-top: 20px;
+}
+
+.glow-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(0, 255, 0, 0.8), rgba(0, 128, 0, 0.8));
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px green, 0 0 20px green;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 15px lime, 0 0 30px lime;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid green;
+  border-radius: 5px;
+  background: black;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0 0 10px green;
+}
+
+.game-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.game-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid green;
+  border-radius: 10px;
+  background: black;
+  box-shadow: 0 0 10px green;
+  overflow: hidden;
+  width: 55%;
+    margin: auto;
+}
+
+.game-item:hover {
+  box-shadow: 0 0 15px lime, 0 0 30px lime;
+  cursor: pointer;
+}
+
+.game-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.game-title {
+  font-size: 16px;
+  color: white;
+  text-shadow: 0 0 5px lime;
+}
+
+.srchicon{
+	position: absolute;
+    right: 50px;
+    margin-top: 15px;
+}
+
+
+/***** Modal Container *****/
+.glowing-modal {
+  background: rgba(0, 0, 0, 0.9); /* Dark background */
+  border: 2px solid rgba(0, 255, 0, 0.6); /* Glowing green border */
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.5); /* Glowing effect */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/***** Modal Header *****/
+.login-head {
+  border-bottom: 1px solid rgba(0, 255, 0, 0.6); /* Green underline */
+}
+
+.login-title {
+  color: rgba(0, 255, 0, 0.8); /* Glowing green text */
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.8), 0 0 10px rgba(0, 255, 0, 0.6);
+  font-weight: bold;
+}
+
+/***** Modal Body Text *****/
+.glowing-text {
+  font-size: 14px;
+  color: rgba(0, 255, 0, 0.8);
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.8), 0 0 10px rgba(0, 255, 0, 0.6);
+  margin: 10px 0;
+}
+
+.glowing-text img {
+  margin-right: 5px; /* Space between the arrow and text */
+}
+
+/***** Button Style *****/
+.glowing-button {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(0, 255, 0, 0.3);
+  border: 2px solid rgba(0, 255, 0, 0.6);
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.glowing-button:hover {
+  background: rgba(0, 255, 0, 0.6);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.9), 0 0 30px rgba(0, 255, 0, 0.7);
+  color: black;
+}
+
+/***** Modal Footer *****/
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(0, 255, 0, 0.6); /* Green border */
+  padding: 10px 0;
+}
+
+
+		</style>
+
+  </head>
+
+  <body>
+    <div class="mainpage550 example-box">
+      <div class="background-shapes"></div>
+      <div class="inner-page">
+        <button class="glow-button">Join Telegram</button>
+        <div class="search-bar">
+          <input type="text" placeholder="Search game by name..." />
+          <i class="fa fa-search srchicon" aria-hidden="true"></i>
+        </div>
+        <div class="game-list">
+          <!-- Game Box 1 -->
+          <div class="game-item">
+            <a href="" data-toggle="modal"
+            data-target="#exampleModalCenter">
+              <img src="img/91-club.png" alt="91CLUB Logo"
+              class="game-logo" >
+            <div class="game-title">91CLUB</div>
+
+            </a>
+          
+          </div>
+          <!-- Game Box 2 -->
+          <div class="game-item">
+            <img src="img/dhan365.png" alt="91CLUB Logo"
+              class="game-logo">
+            <div class="game-title">55CLUB (Hack)</div>
+          </div>
+          <!-- Game Box 3 -->
+          <div class="game-item">
+            <img src="img/in999.png" alt="91CLUB Logo"
+              class="game-logo">
+            <div class="game-title">in999 (Hack)</div>
+          </div>
+
+          <div class="game-item">
+            <img src="img/91-club.png" alt="91CLUB Logo"
+              class="game-logo">
+            <div class="game-title">in999 (Hack)</div>
+          </div>
+
+          <div class="game-item">
+            <img src="img/91-club.png" alt="91CLUB Logo"
+              class="game-logo">
+            <div class="game-title">in999 (Hack)</div>
+          </div>
+
+          <div class="game-item">
+            <img src="img/91-club.png" alt="91CLUB Logo"
+              class="game-logo">
+            <div class="game-title">in999 (Hack)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src='js/owl.carousel.min.js'></script>
+
+    <script>
+      const backgroundShapes = document.querySelector('.background-shapes');
+      // Add 30 cubes dynamically
+      for (let i = 0; i < 15; i++) {
+        const cube = document.createElement('div');
+        cube.classList.add('cube');
+        cube.style.left = `${Math.random() * 100}%`;
+        cube.style.top = `${Math.random() * 100}%`;
+        cube.style.animationDuration = `${8 + Math.random() * 7}s`;
+        backgroundShapes.appendChild(cube);
+      }
+      
+    </script>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content glowing-modal">
+      <div class="modal-header login-head">
+        <h5 class="modal-title login-title" id="exampleModalLongTitle">Notice</h5>
+      </div>
+      <div class="modal-body pl-0 login-body">
+        <div class="row">
+          <div class="col-12 mt-3">
+            <p class="pr-0 glowing-text">
+              <img src="img/arrow.png" width="15">
+              （आपको अपने लिंक को अधिक दोस्तों के साथ शीघ्रता से साझा करने, इसे वायरल
+              रूप से फैलाने, एक बड़ी टीम बनाने, प्रति दिन 0 निवेश करने और अधिक रेफरल
+              पुरस्कार अर्जित करने के लिए केवल एक स्मार्टफोन की आवश्यकता है।）
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer p-0">
+          <button type="button" class="btn ok-btn glowing-button"
+            data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </body>
+</html>

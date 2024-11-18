@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>New Project</title>
+        <link rel="icon" href="img/favicon.png">
+        <link rel='stylesheet' href='css/bootstrap.min.css'>
+        <link rel="stylesheet"
+            href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <link rel='stylesheet' href='css/style.css'>
+
+    
+
+    </head>
+    <body>
+        <div class="mainpage550">
+
+            <header class="page-head">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="back-btn" onclick="history.back(-1)">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </div>
+                        <h5 class="text-center">Account record</h5>
+                    </div>
+                </div>
+            </header>
+
+            <div class="account-card mt-1">
+                <div class="row">
+                    <div class="col-4 p-0">
+                        <input type="date" id="fromDateInput" class="form-control datepicker acoount-input date-input" placeholder="Select From Date">
+                    </div>
+                    <div class="col-1 p-0 mt-1">
+                        <h6 class="cnt">to</h6>
+                    </div>
+                    <div class="col-4 p-0">
+                        <input type="date" id="toDateInput" class="form-control datepicker acoount-input date-input" placeholder="Select To Date">
+                    </div>
+                    <div class="col-3 pt-0 mt-1 pr-0 d-flex align-items-center">
+                        <button class="btn text-light acoount-btn">
+                            <i class="fa fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="col-12 p-0">
+                    <nav class="level-card-tabs">
+                        <div class="nav nav-tabs nav-justified" id="nav-tab"
+                            role="tablist">
+
+                            <a class="nav-item nav-link active"
+                                id="nav-alltype-tab"
+                                data-toggle="tab" href="#nav-alltype"
+                                role="tab"
+                                aria-controls="nav-alltype"
+                                aria-selected="true">All types
+
+                            </a>
+
+                            <a class="nav-item nav-link" id="nav-with-tab"
+                                data-toggle="tab" href="#nav-with"
+                                role="tab"
+                                aria-controls="nav-with"
+                                aria-selected="false">Withdrawals
+
+                            </a>
+
+                            <a class="nav-item nav-link" id="nav-rch-tab"
+                                data-toggle="tab" href="#nav-rch" role="tab"
+                                aria-controls="nav-rch"
+                                aria-selected="false">Recharge
+
+                            </a>
+
+                        </div>
+                    </nav>
+
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane show active" id="nav-alltype"
+                            role="tabpanel"
+                            aria-labelledby="nav-alltype-tab">
+                            <div class="level-card">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p class="no-rcd mb-5 cnt">There is
+                                            no
+                                            record on this page</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="nav-with" role="tabpanel"
+                            aria-labelledby="nav-with-tab">
+                            <div class="main-tb-card mt-2 mb-2 mr-2 ml-2">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div class="row no-gutters">
+                                                <div class="col-6 my-auto">
+                                                    <p>Recharge</p>
+                                                    <p>20-10-2022
+                                                        10:15:22</p>
+
+                                                </div>
+                                                <div
+                                                    class="col-6 text-right my-auto">
+                                                    <div
+                                                        class="rec-rd">-1500</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="nav-rch" role="tabpanel"
+                            aria-labelledby="nav-rch-tab">
+                            <div class="main-tb-card mt-2 mb-2 mr-2 ml-2">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div class="row no-gutters">
+                                                <div class="col-6 my-auto">
+                                                    <p>Recharge</p>
+                                                    <p>20-10-2022
+                                                        10:15:22</p>
+
+                                                </div>
+                                                <div
+                                                    class="col-6 text-right my-auto">
+                                                    <div
+                                                        class="rec-gr">+1500</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <script>
+                function openDatePicker(datePickerId) {
+                    var datePicker = document.getElementById(datePickerId);
+                    datePicker.click();
+                }
+        
+                function updateDateInput(inputId, dateValue) {
+                    var dateInput = document.getElementById(inputId);
+                    dateInput.value = dateValue;
+                }
+            </script>
+
+            <script src="js/jquery.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+
+        </body>
+    </html>
