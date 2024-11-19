@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>New Project</title>
+        <link rel="icon" href="img/favicon.png">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet"
+            href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <style>
+      body {
+        margin: 0;
+        padding: 0;
+       
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        color: white;
+        overflow-x: hidden;
+      }
+
+      .mainpage550 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        padding: 25px;
+        background: linear-gradient(145deg, #ffffff20, #00000080);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+      }
+
+      .glow-button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+        font-size: 16px;
+        color: white;
+        background: linear-gradient(90deg, #ff7a18, #af002d 85%);
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 20px rgba(255, 122, 24, 0.6);
+      }
+
+      .glow-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 30px rgba(255, 122, 24, 0.8);
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        border-radius: 25px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        font-size: 16px;
+        outline: none;
+        box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.1);
+      }
+
+      .search-bar .srchicon {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .game-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .game-item {
+        background: linear-gradient(145deg, #444444, #222222);
+        width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .game-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+      }
+
+      .game-logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .game-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffc107;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      }
+    </style>
+    </head>
+
+    <body>
+        <div class="mainpage550">
+            <div class="inner-page">
+                <div class="row">
+                    <div class="col-12">
+                        <button class="glow-button">Join Telegram</button>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 ">
+                        <div class="search-bar">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Search game by name..." />
+                            <i class="fa fa-search srchicon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <!-- Game Box 1 -->
+                    <div class="col-md-6 col-lg-6">
+                        <div class="game-item">
+                            <img src="img/91-club.png" alt="91CLUB Logo"
+                                class="game-logo" />
+                            <div class="game-title">91CLUB</div>
+                        </div>
+                    </div>
+                    <!-- Game Box 2 -->
+                    <div class="col-md-6 col-lg-6">
+                        <div class="game-item">
+                            <img src="img/dhan365.png" alt="55CLUB Logo"
+                                class="game-logo" />
+                            <div class="game-title">55CLUB (Hack)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Notice</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Share your link with friends and grow your team to
+                            earn rewards.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary"
+                            data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
