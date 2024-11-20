@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Authentication</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style_sheet.css">
+    <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+
+<div class="auth-container">
+    <!-- Tab Navigation -->
+    <div class="tabs">
+        <div class="tab active" id="login-tab">Login</div>
+        <div class="tab" id="register-tab">Register</div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container" id="login-form">
+        <a href="index.html">
+            <img src="img/dhan365.png" alt="Logo" class="logo">
+        </a>
+        <h2>Welcome Back</h2>
+        <div class="input-field">
+            <input type="text" placeholder="Username" required>
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="Password" id="password" required>
+            <i class="fa fa-eye eye-icon" id="togglePassword"></i>
+        </div>
+        <button class="action-btn">Login</button>
+        <div class="forgot-password text-center">
+            <a href="forgot.html">Forgot Password?</a>
+        </div>
+    </div>
+
+    <!-- Register Form -->
+    <div class="form-container" id="register-form" style="display: none;">
+        <a href="index.html">
+            <img src="img/dhan365.png" alt="Logo" class="logo">
+        </a>
+        <h2>Create Account</h2>
+        <div class="input-field">
+            <input type="text" placeholder="Full Name" required>
+        </div>
+        <div class="input-field">
+            <input type="email" placeholder="Email" required>
+        </div>
+        <div class="input-field">
+            <select required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <!-- <div class="input-field">
+            <label style="display: flex; align-items: center; gap: 10px;">
+                <input type="checkbox" required>
+                <span>I agree to the <a href="terms-and-conditions.html" target="_blank" style="color: #34d399;">Terms and Conditions</a>.</span>
+            </label>
+        </div> -->
+        <button class="action-btn">Register</button>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Tab Switching
+    const loginTab = document.getElementById('login-tab');
+    const registerTab = document.getElementById('register-tab');
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+
+    function switchTab(activeTab, showForm) {
+        [loginTab, registerTab].forEach(tab => tab.classList.remove('active'));
+        activeTab.classList.add('active');
+        [loginForm, registerForm].forEach(form => form.style.display = 'none');
+        showForm.style.display = 'block';
+    }
+
+    loginTab.addEventListener('click', () => switchTab(loginTab, loginForm));
+    registerTab.addEventListener('click', () => switchTab(registerTab, registerForm));
+
+    // Toggle Password Visibility
+    const togglePassword = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
+
+    togglePassword.addEventListener('click', () => {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        togglePassword.classList.toggle('fa-eye');
+        togglePassword.classList.toggle('fa-eye-slash');
+    });
+</script>
+
+</body>
+</html>

@@ -6,408 +6,24 @@
         <title>Game Hub</title>
         <link rel="icon" href="img/favicon.png">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet"
-            href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-
-        <style>
-
-.matrix {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; 
-    overflow: hidden;
-    background-color: black;
-    opacity: .4;
-}
-
-.matrix canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-       
-    body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: black; /* Fallback background color */
-    color: white;
-    overflow-x: hidden;
-    position: relative; /* Required for child elements' positioning */
-}
-
-.mainpage550 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    position: relative;
-    z-index: 1; /* Keep content above the matrix background */
-}
-    .inner-page {
-    width: 90%;
-    max-width: 600px;
-    padding: 10px;
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    overflow: hidden;
-    margin:20px 0px 20px 0px;
-        }
-
-
-        .glow-button {
-    width: 100%;
-    padding: 14px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: #00f700; /* Neon green text for a hacker vibe */
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    position: relative;
-    background: #0a0a0a; /* Dark background for a hacker aesthetic */
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.5); /* Neon green glowing shadow */
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-
-.glow-button::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, rgba(0, 255, 0, 0.1), rgba(0, 0, 0, 0.1));
-    transform: rotate(0deg);
-    z-index: 1;
-    pointer-events: none;
-    transition: transform 0.3s ease;
-}
-
-/* Electric Surge Effect on hover */
-.glow-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 50px rgba(0, 255, 0, 1), 0 0 70px rgba(0, 255, 0, 0.7); /* Stronger neon glow on hover */
-    background: #0a0a0a; /* Retaining the dark background */
-    animation: electricSurge 1s ease-out, pulse 1.5s ease-in-out infinite; /* Electric surge and pulse */
-}
-
-/* Electric Surge Animation */
-@keyframes electricSurge {
-    0% {
-        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.3); /* Weak glow at the start */
-    }
-    25% {
-        box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.7); /* Intense neon green glow */
-    }
-    50% {
-        box-shadow: 0 0 60px rgba(0, 255, 0, 1), 0 0 80px rgba(0, 255, 0, 0.8); /* Maximum glow */
-    }
-    75% {
-        box-shadow: 0 0 50px rgba(0, 255, 0, 0.7), 0 0 70px rgba(0, 255, 0, 0.5); /* Slight decrease */
-    }
-    100% {
-        box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.7); /* Intense glow */
-    }
-}
-
-/* Pulse effect */
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.5); /* Soft glow */
-    }
-    50% {
-        box-shadow: 0 0 40px rgba(0, 255, 0, 1), 0 0 60px rgba(0, 255, 0, 0.7); /* Stronger glow */
-    }
-}
-
-/* Ripple effect on click */
-.glow-button:active {
-    transform: translateY(3px); /* Button presses down */
-    box-shadow: 0 0 50px rgba(0, 255, 0, 1), 0 0 70px rgba(0, 255, 0, 0.7); /* Strong neon glow */
-    background: #0a0a0a; /* Dark background */
-    animation: ripple 0.6s ease-out, expandRing 1s ease-out; /* Ripple and expanding ring on click */
-}
-
-.glow-button:active::before {
-    transform: scale(0); /* Ripple effect scale */
-}
-
-/* Expanding ring effect */
-@keyframes expandRing {
-    0% {
-        transform: scale(0);
-        opacity: 0.8;
-    }
-    50% {
-        transform: scale(3);
-        opacity: 0.5;
-    }
-    100% {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-/* Text and pseudo-element adjustment */
-.glow-button span {
-    position: relative;
-    z-index: 2;
-}
-
-/* Ripple effect animation */
-@keyframes ripple {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-        .search-bar {
-            position: relative;
-            margin-top: 20px;
-        }
-
-        .search-bar input {
-            width: 100%;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 25px;
-            background: #2a2a2a;
-            color: white;
-            font-size: 16px;
-            outline: none;
-            box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.1);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .search-bar input:focus {
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-        }
-
-        .search-bar .srchicon {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-    .game-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-/* ................. */
-
-.game-item {
-    padding: 20px;
-    border-radius: 30px;
-    text-align: center;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border: 3px solid #ccc; /* Optional: Border color */
-}
-
-/* Create a green dot at the top-right corner */
-.game-item::after {
-    content: '';
-    position: absolute;
-    top: 15px;
-    right: 17px;
-    width: 15px;
-    height: 15px;
-    background-color: green;
-    border-radius: 50%;
-    opacity: 0;
-    transform: scale(1); /* Initial size */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Show the green dot on hover */
-.game-item:hover::after {
-    opacity: 1; /* Make it visible on hover */
-}
-
-/* Hover state for the game-item itself */
-.game-item:hover {
-    transform: translateY(-5px);
-    cursor: pointer;
-}
-
-/* Add waves on active state */
-.game-item:active::after {
-    animation: waveEffect 1s ease-out;
-}
-
-/* Optional: Add some content glow effect */
-.game-item span {
-    position: relative;
-    z-index: 2; /* Ensure content stays above */
-    color: #000000;
-    transition: color 0.3s ease;
-}
-
-.game-item:hover span {
-    color: #000000; /* Text brightens on hover */
-}
-
-/* Wave effect animation */
-@keyframes waveEffect {
-    0% {
-        box-shadow: 0 0 10px rgba(0, 128, 0, 0.8), 0 0 0 rgba(0, 128, 0, 0.4);
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(0, 128, 0, 0.6), 0 0 30px rgba(0, 128, 0, 0.3);
-        transform: scale(1.5);
-        opacity: 0.8;
-    }
-    100% {
-        box-shadow: 0 0 30px rgba(0, 128, 0, 0.4), 0 0 50px rgba(0, 128, 0, 0.1);
-        transform: scale(2);
-        opacity: 0;
-    }
-}
-
-/* .................. */
-.game-logo {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 15px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9); 
-    background-color: #037203;
-}
-
-.game-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
-}
-/* ...................................................... */
-
-.glowing-modal {
-    border-radius: 15px; /* Smooth and larger border-radius for a modern look */
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Stylish semi-transparent border */
-    background: rgba(0, 0, 0, 0.8); /* Slight transparency for background */
-    color: #ffffff; /* White text for contrast */
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Deep shadow for a floating effect */
-    animation: popupScale 0.4s ease-out; /* Smooth scaling animation */
-}
-
-/* Modal Header Styling */
-.login-head {
-    background: linear-gradient(90deg, #2ecc71, #27ae60); /* Green gradient */
-    padding: 20px;
-    border-radius: 15px 15px 0 0;
-    text-align: center
-}
-
-.login-title {
-    font-size: 22px;
-    font-weight: bold;
-    color: #ffffff;
-    margin: auto;
-}
-
-/* Modal Body Styling */
-.login-body {
-    background: linear-gradient(120deg, #1f1f1f, #434343); /* Sleek gradient for body */
-    background-size: 400% 400%;
-    animation: gradientFlow 8s infinite alternate; /* Smooth gradient flow animation */
-    padding: 25px;
-    color: #ffffff;
-    border-radius: 0 0 15px 15px;
-}
-
-.glowing-text {
-    font-size: 18px;
-    line-height: 1.7;
-    text-align: center;
-    color: #ffffff;
-}
-
-/* Button Styling */
-.glowing-button {
-    color: #ffffff;
-    border: 1px solid #00ff88;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 50px; /* Circular button design */
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.glowing-button:hover {
-    color: #ffffff;
-    background-color: #000000;
-    border: none;
-}
-
-
-/* Modal Footer */
-.modal-footer {
-    padding: 15px 10px;
-    background: #2e2e2e; /* Neutral footer background */
-    text-align: center;
-}
-
-/* Animations */
-@keyframes popupScale {
-    0% {
-        transform: scale(0.7);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes gradientFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-}
-
-    </style>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     </head>
     <body>
 
+        <!-- ...........background matrix.................. -->
+
         <div class="matrix" id="matrix"
-            style="width: 100%; height: 100%;"></div>
+            style="width: 100%; height: 100%;">
+        </div>
+
+        <!-- ...........background matrix end.................. -->
 
         <div class="mainpage550">
             <div class="inner-page">
                 <div class="row">
                     <div class="col-12">
-                        <button class="glow-button">Join Telegram</button>
+                        <button class="glow-button" onclick="window.location.href='login.html'">Join Telegram</button>
                     </div>
                 </div>
                 <div class="row mt-2">
@@ -430,7 +46,7 @@
 
                     </div>
                     <div class="game-item" data-toggle="modal"
-                    data-target="#exampleModalCenter">
+                        data-target="#exampleModalCenter">
                         <a href="#" class="text-decoration-none">
                             <img src="img/dhan365.png" alt="55CLUB Logo"
                                 class="game-logo">
@@ -482,8 +98,10 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
 
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1"
-            role="dialog"
+
+<!--------------------------------------------modal start---------------------------------------------------------->
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1"role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content glowing-modal">
@@ -495,7 +113,10 @@
                         <div class="row">
                             <div class="col-12 ">
                                 <p class="glowing-text">
-                                    You only need a smartphone to quickly share your link with more friends, spread it virally, build a large team, invest zero per day, and earn more referral rewards.
+                                    You only need a smartphone to quickly share
+                                    your link with more friends, spread it
+                                    virally, build a large team, invest zero per
+                                    day, and earn more referral rewards.
                                 </p>
                             </div>
                         </div>
@@ -509,50 +130,53 @@
             </div>
         </div>
 
-        <script>
-       // Matrix Animation Script
-const canvas = document.createElement('canvas');
-const ctx = canvas.getContext('2d');
-const matrixContainer = document.getElementById('matrix');
-matrixContainer.appendChild(canvas);
+<!--------------------------------------------modal end---------------------------------------------------------->
 
-// Resize canvas to fill the window dynamically
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
+    <script>
+            // Matrix Animation Script
+     const canvas = document.createElement('canvas');
+     const ctx = canvas.getContext('2d');
+     const matrixContainer = document.getElementById('matrix');
+     matrixContainer.appendChild(canvas);
+     
+     // Resize canvas to fill the window dynamically
+     function resizeCanvas() {
+         canvas.width = window.innerWidth;
+         canvas.height = window.innerHeight;
+     }
+     
+     resizeCanvas(); // Initial setup
+     window.addEventListener('resize', resizeCanvas); // Update on window resize
+     
+     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+     const fontSize = 16; // Increase for better visibility on larger screens
+     const columns = Math.floor(canvas.width / fontSize);
+     const drops = Array(columns).fill(1);
+     
+     function drawMatrix() {
+         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+         ctx.fillRect(0, 0, canvas.width, canvas.height);
+     
+         ctx.fillStyle = '#0F0';
+         ctx.font = `${fontSize}px monospace`;
+     
+         drops.forEach((drop, index) => {
+             const text = characters.charAt(Math.floor(Math.random() * characters.length));
+             const x = index * fontSize;
+             const y = drop * fontSize;
+     
+             ctx.fillText(text, x, y);
+     
+             if (y > canvas.height && Math.random() > 0.975) {
+                 drops[index] = 0;
+             }
+             drops[index]++;
+         });
+     }
+     
+     setInterval(drawMatrix, 35);
+     
+   </script>
 
-resizeCanvas(); // Initial setup
-window.addEventListener('resize', resizeCanvas); // Update on window resize
-
-const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-const fontSize = 16; // Increase for better visibility on larger screens
-const columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(1);
-
-function drawMatrix() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = '#0F0';
-    ctx.font = `${fontSize}px monospace`;
-
-    drops.forEach((drop, index) => {
-        const text = characters.charAt(Math.floor(Math.random() * characters.length));
-        const x = index * fontSize;
-        const y = drop * fontSize;
-
-        ctx.fillText(text, x, y);
-
-        if (y > canvas.height && Math.random() > 0.975) {
-            drops[index] = 0;
-        }
-        drops[index]++;
-    });
-}
-
-setInterval(drawMatrix, 35);
-
-        </script>
     </body>
 </html>

@@ -1,0 +1,134 @@
+
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .auth-container {
+            background: #1f2937;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            width: 100%;
+            max-width: 450px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            background: #34d399;
+            padding: 10px;
+        }
+
+        .tab {
+            width: 50%;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            background: #1f2937;
+            color: #34d399;
+        }
+
+        .form-container {
+            padding: 20px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #34d399;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 15px;
+            width: 120px;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-field input,
+        .input-field select {
+            width: 100%;
+            padding: 10px;
+            background: #374151;
+            border: 1px solid #4b5563;
+            border-radius: 5px;
+            color: #d1d5db;
+            outline: none;
+        }
+
+        .input-field input:focus,
+        .input-field select:focus {
+            border-color: #34d399;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #9ca3af;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #34d399;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .action-btn {
+            width: 100%;
+            padding: 10px;
+            background: #34d399;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: #2eab8b;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
