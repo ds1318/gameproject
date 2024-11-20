@@ -72,10 +72,9 @@
     cursor: pointer;
     position: relative;
     background: #0a0a0a; /* Dark background for a hacker aesthetic */
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.5); /* Neon green glowing shadow */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.5); /* Neon green glowing shadow */
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    font-family: 'Courier New', Courier, monospace; /* Adding a monospaced font to reinforce the hacker style */
 }
 
 .glow-button::before {
@@ -213,6 +212,8 @@
     margin-top: 30px;
 }
 
+/* ................. */
+
 .game-item {
     padding: 20px;
     border-radius: 30px;
@@ -235,47 +236,25 @@
     background-color: green;
     border-radius: 50%;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: scale(1); /* Initial size */
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Show the green dot on hover */
 .game-item:hover::after {
     opacity: 1; /* Make it visible on hover */
-    transform: scale(1); /* Ensure the dot is at its original size */
 }
 
-.game-item:hover {
-    transform: translateY(-5px);
-  
-    cursor: pointer;
-}
-/* 
-.game-item::before,
-.game-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    z-index: 0; 
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(37, 201, 252, 0.9));
-    transition: transform 0.5s ease;
-    transform: translateX(0);
-    z-index: -1;
-    color: #000000 !important;
-}
-
-.game-item:hover::before {
-    transform: translateX(100%); 
-}
-
+/* Hover state for the game-item itself */
 .game-item:hover {
     transform: translateY(-5px);
     cursor: pointer;
- 
-} */
+}
+
+/* Add waves on active state */
+.game-item:active::after {
+    animation: waveEffect 1s ease-out;
+}
 
 /* Optional: Add some content glow effect */
 .game-item span {
@@ -289,7 +268,26 @@
     color: #000000; /* Text brightens on hover */
 }
 
+/* Wave effect animation */
+@keyframes waveEffect {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 128, 0, 0.8), 0 0 0 rgba(0, 128, 0, 0.4);
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 128, 0, 0.6), 0 0 30px rgba(0, 128, 0, 0.3);
+        transform: scale(1.5);
+        opacity: 0.8;
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 128, 0, 0.4), 0 0 50px rgba(0, 128, 0, 0.1);
+        transform: scale(2);
+        opacity: 0;
+    }
+}
 
+/* .................. */
 .game-logo {
     width: 100px;
     height: 100px;
@@ -306,6 +304,97 @@
     color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
+/* ...................................................... */
+
+.glowing-modal {
+    border-radius: 15px; /* Smooth and larger border-radius for a modern look */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Stylish semi-transparent border */
+    background: rgba(0, 0, 0, 0.8); /* Slight transparency for background */
+    color: #ffffff; /* White text for contrast */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Deep shadow for a floating effect */
+    animation: popupScale 0.4s ease-out; /* Smooth scaling animation */
+}
+
+/* Modal Header Styling */
+.login-head {
+    background: linear-gradient(90deg, #2ecc71, #27ae60); /* Green gradient */
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    text-align: center
+}
+
+.login-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: auto;
+}
+
+/* Modal Body Styling */
+.login-body {
+    background: linear-gradient(120deg, #1f1f1f, #434343); /* Sleek gradient for body */
+    background-size: 400% 400%;
+    animation: gradientFlow 8s infinite alternate; /* Smooth gradient flow animation */
+    padding: 25px;
+    color: #ffffff;
+    border-radius: 0 0 15px 15px;
+}
+
+.glowing-text {
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Button Styling */
+.glowing-button {
+    color: #ffffff;
+    border: 1px solid #00ff88;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px; /* Circular button design */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.glowing-button:hover {
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+}
+
+
+/* Modal Footer */
+.modal-footer {
+    padding: 15px 10px;
+    background: #2e2e2e; /* Neutral footer background */
+    text-align: center;
+}
+
+/* Animations */
+@keyframes popupScale {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
 
     </style>
     </head>
@@ -313,6 +402,7 @@
 
         <div class="matrix" id="matrix"
             style="width: 100%; height: 100%;"></div>
+
         <div class="mainpage550">
             <div class="inner-page">
                 <div class="row">
@@ -330,60 +420,94 @@
                     </div>
                 </div>
                 <div class="game-list">
-                    <div class="game-item">
-                        <a href="" class="text-decoration-none">
+                    <div class="game-item" data-toggle="modal"
+                        data-target="#exampleModalCenter">
+                        <a href="#" class="text-decoration-none">
                             <img src="img/dhan365.png" alt="55CLUB Logo"
-                            class="game-logo">
-                        <div class="game-title">91CLUB</div>
+                                class="game-logo">
                         </a>
+                        <div class="game-title">91CLUB</div>
+
                     </div>
-                    <div class="game-item">
-                        <a href="" class="text-decoration-none">
+                    <div class="game-item" data-toggle="modal"
+                    data-target="#exampleModalCenter">
+                        <a href="#" class="text-decoration-none">
                             <img src="img/dhan365.png" alt="55CLUB Logo"
-                            class="game-logo">
-                        <div class="game-title">91CLUB</div>
+                                class="game-logo">
                         </a>
-                    </div>
-                </div>
-                <div class="game-list">
-                    <div class="game-item">
-                        <a href="" class="text-decoration-none">
-                            <img src="img/dhan365.png" alt="55CLUB Logo"
-                            class="game-logo">
                         <div class="game-title">91CLUB</div>
-                        </a>
-                    </div>
-                    <div class="game-item">
-                        <a href="" class="text-decoration-none">
-                            <img src="img/dhan365.png" alt="55CLUB Logo"
-                            class="game-logo">
-                        <div class="game-title">91CLUB</div>
-                        </a>
+
                     </div>
                 </div>
                 <div class="game-list">
                     <div class="game-item">
-                        <a href="" class="text-decoration-none">
+                        <a href="#" class="text-decoration-none">
                             <img src="img/dhan365.png" alt="55CLUB Logo"
-                            class="game-logo">
-                        <div class="game-title">91CLUB</div>
+                                class="game-logo">
                         </a>
+                        <div class="game-title">91CLUB</div>
+
                     </div>
                     <div class="game-item">
-                        <a href="" class="text-decoration-none">
+                        <a href="#" class="text-decoration-none">
                             <img src="img/dhan365.png" alt="55CLUB Logo"
-                            class="game-logo">
-                        <div class="game-title">91CLUB</div>
+                                class="game-logo">
                         </a>
+                        <div class="game-title">91CLUB</div>
+
+                    </div>
+                </div>
+                <div class="game-list">
+                    <div class="game-item">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/dhan365.png" alt="55CLUB Logo"
+                                class="game-logo">
+                        </a>
+                        <div class="game-title">91CLUB</div>
+
+                    </div>
+                    <div class="game-item">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/dhan365.png" alt="55CLUB Logo"
+                                class="game-logo">
+                        </a>
+                        <div class="game-title">91CLUB</div>
+
                     </div>
                 </div>
 
-       
             </div>
         </div>
 
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content glowing-modal">
+                    <div class="modal-header login-head">
+                        <h5 class="modal-title login-title"
+                            id="exampleModalLongTitle">Notice</h5>
+                    </div>
+                    <div class="modal-body login-body">
+                        <div class="row">
+                            <div class="col-12 ">
+                                <p class="glowing-text">
+                                    You only need a smartphone to quickly share your link with more friends, spread it virally, build a large team, invest zero per day, and earn more referral rewards.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer p-0 ">
+                            <button type="button"
+                                class="btn ok-btn glowing-button"
+                                data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script>
        // Matrix Animation Script
