@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div class="auth-container">
+<div class="auth-container p-2">
     <!-- Tab Navigation -->
     <div class="tabs">
         <div class="tab active" id="login-tab">Login</div>
@@ -50,6 +50,11 @@
         <div class="input-field">
             <input type="email" placeholder="Email" required>
         </div>
+        <div class="input-field">
+            <input type="password" placeholder="Password" id="password" required>
+            <i class="fa fa-eye eye-icon" id="togglePassword"></i>
+        </div>
+        
         <div class="input-field">
             <select required>
                 <option value="" disabled selected>Select Gender</option>
