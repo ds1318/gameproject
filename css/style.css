@@ -221,12 +221,17 @@ body {
 }
 
 .game-list {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-	gap: 20px;
-	margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
 }
 
+@media (max-width: 550px) {
+    .game-list {
+        grid-template-columns: 1fr; /* One item per row on small screens */
+    }
+}
 /* ................. */
 
 .game-item {
